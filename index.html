@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seasonal Food Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="date-display">Date</h1>
+            <p id="previous-month-display">Last Month: --%</p>
+        </header>
+
+        <div class="progress-container">
+            <div id="progress-circle" class="progress-circle">
+                <span id="progress-text">0%</span>
+            </div>
+        </div>
+
+        <main>
+            <h2>Optimal Foods for <span id="month-display">Month</span></h2>
+            <div id="food-list" class="food-list">
+                <!-- Checkboxes will be injected here via JavaScript -->
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
