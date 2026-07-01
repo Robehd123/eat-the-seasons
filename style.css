@@ -1,49 +1,61 @@
 :root {
     --bg-colour: #F9FAFB;
-    --text-colour: #111827;
-    --circle-size: 150px;
+    --primary-colour: #123524;
+    --text-colour: #1f2937;
+    --border-colour: #e5e7eb;
+    --circle-size: 140px;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
     background-color: var(--bg-colour);
     color: var(--text-colour);
     margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
-    max-width: 600px;
     width: 100%;
+    min-height: 100vh;
     background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    color: var(--primary-colour);
+}
+
+header h1 {
+    margin: 0 0 5px 0;
+    font-size: 24px;
+}
+
+header p {
+    margin: 0;
+    font-size: 14px;
+    color: #6b7280;
 }
 
 .progress-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .progress-circle {
     width: var(--circle-size);
     height: var(--circle-size);
     border-radius: 50%;
-    background: conic-gradient(#ef4444 0%, #e5e7eb 0%);
+    background: conic-gradient(var(--border-colour) 100%, transparent 0);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    transition: background 0.3s ease;
+    transition: background 0.4s ease-out;
 }
 
 .progress-circle::before {
@@ -57,25 +69,98 @@ header {
 
 #progress-text {
     position: relative;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-colour);
 }
 
-.food-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+.search-bar {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 25px;
+    border: 2px solid var(--border-colour);
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline-color: var(--primary-colour);
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
+}
+
+.month-title {
+    font-size: 20px;
+    color: var(--primary-colour);
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-colour);
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+details {
+    margin-bottom: 12px;
+}
+
+summary {
+    font-size: 16px;
+    color: var(--primary-colour);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    background-color: var(--bg-colour);
+    padding: 12px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 22px;
+    line-height: 1;
+}
+
+details[open] summary::after {
+    content: '−';
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
 }
 
 .food-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 16px;
+    padding: 16px 8px;
+    border-bottom: 1px solid var(--border-colour);
+    font-size: 18px;
+}
+
+.food-item:last-child {
+    border-bottom: none;
+}
+
+.food-item label {
+    flex-grow: 1;
+    margin-left: 16px;
+    cursor: pointer;
 }
 
 input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
+    width: 26px;
+    height: 26px;
+    accent-color: var(--primary-colour);
+    flex-shrink: 0;
     cursor: pointer;
+    border: 2px solid var(--border-colour);
+    border-radius: 4px;
 }

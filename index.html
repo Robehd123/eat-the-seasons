@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seasonal Food Tracker</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Seasonal Tracker</title>
+    <link rel="icon" type="image/png" href="carrot.png">
+    <link rel="apple-touch-icon" href="carrot.png">
 </head>
 <body>
     <div class="container">
         <header>
             <h1 id="date-display">Date</h1>
-            <p id="previous-month-display">Last Month: --%</p>
+            <p id="previous-month-display">Previous Month: --%</p>
         </header>
-
         <div class="progress-container">
-            <div id="progress-circle" class="progress-circle">
-                <span id="progress-text">0%</span>
-            </div>
+            <div id="progress-circle" class="progress-circle"><span id="progress-text">0%</span></div>
         </div>
-
+        <input type="search" id="search-input" class="search-bar" placeholder="Search seasonal foods...">
         <main>
-            <h2>Optimal Foods for <span id="month-display">Month</span></h2>
-            <div id="food-list" class="food-list">
-                <!-- Checkboxes will be injected here via JavaScript -->
-            </div>
+            <h2 class="month-title">Optimal Foods for <span id="month-display">Month</span></h2>
+            <div id="food-list" class="food-list"></div>
         </main>
     </div>
     <script src="script.js"></script>

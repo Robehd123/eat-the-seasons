@@ -1,0 +1,15 @@
+{
+  "name": "Seasonal Food Tracker",
+  "short_name": "Seasonal",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F9FAFB",
+  "theme_color": "#123524",
+  "icons": [
+    {
+      "src": "carrot.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
